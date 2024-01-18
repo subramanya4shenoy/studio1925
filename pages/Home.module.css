@@ -1,0 +1,31 @@
+.scrollContainer {
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  height: 100vh;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth; /* Smooth scrolling */
+}
+
+.screen {
+  height: 100vh;
+  scroll-snap-align: start;
+  /* Other styles */
+}
+
+
+
+.screen1 {
+  background-color: beige;
+}
+
+.screen2 {
+  background-color: whitesmoke;
+}
+
+.screen3 {
+  background-color: yellow;
+}
+
+.screen4 {
+  background-color: lightblue;
+}
