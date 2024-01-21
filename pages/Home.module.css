@@ -15,7 +15,7 @@
 
 
 .screen1 {
-  background-color: beige;
+  background-color: #fcc38e;
 }
 
 .screen2 {
@@ -23,9 +23,13 @@
 }
 
 .screen3 {
-  background-color: yellow;
+  background-color: #fcc38e;
 }
 
 .screen4 {
   background-color: lightblue;
+}
+
+.section1{
+  background: red;
 }
