@@ -234,61 +234,80 @@ export default function Home() {
       </div>
 
       {/* screen 3 */}
-      <div className={`${styles.screen} snap-start flex flex-col md:flex-row items-center md:justify-end relative`}>
-  {/* Fullscreen background image */}
-  <div className="absolute inset-0 -z-10">
-    <img
-      src="/images/Hero3.jpg"
-      alt="Interior"
-      className="w-full h-full object-cover"
-    />
-  </div>
+      <div
+        className={`${styles.screen} 
+                       snap-start 
+                       flex flex-col 
+                       md:flex-row 
+                       items-center 
+                       md:justify-end relative`}
+      >
+        {/* Fullscreen background image */}
+        <div className="absolute inset-0 -z-10">
+          <img
+            src="/images/Hero3.jpg"
+            alt="Interior"
+            className="w-full h-full object-cover"
+          />
+        </div>
 
-  {/* Content Section */}
-  <div className="w-full md:w-1/2 bg-black bg-opacity-50 p-4 md:p-8">
-    {/* Title */}
-    <h2 className="text-2xl md:text-4xl font-semibold mb-4 md:mb-6 text-white">
-      Solid and usable solutions for home interiors
-    </h2>
+        {/* Content Section */}
+        <div className="md:p-8 p-4 w-full flex flex-col items-center justify-center">
+          <div className="mt-20 md:mt-0 bg-teal-900 bg-opacity-90 rounded-2xl w-full md:max-w-4xl p-5 md:p-10">
+            {/* Title */}
+            <h2 className="text-xl md:text-4xl font-semibold text-center text-teal-100 mb-4 md:mb-6">
+              Solid and usable solutions for home interiors
+            </h2>
 
-    {/* Cards */}
-    <div className="space-y-4">
-      {/* Card 1 */}
-      <div className="bg-white bg-opacity-90 shadow rounded-lg p-4">
-        <h3 className="text-lg md:text-xl font-bold mb-2 text-gray-800">Design Consultation</h3>
-        <p className="text-gray-700 text-sm md:text-base">
-          Our expert will speak to you to understand your vision for your home.
-        </p>
+            {/* Cards */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-4">
+              {/* Div 1 */}
+              <div className="bg-teal-300 w-full md:h-52 bg-opacity-90 shadow rounded-lg p-4 md:p-12 flex flex-col justify-start">
+                <h3 className="text-xl md:text-4xl font-bold mb-2 text-gray-800">
+                  Design Consultation
+                </h3>
+                <p className="font-semibold md:text-sm opacity-50 text-gray-700 text-xs">
+                  Our expert will speak to you to understand your vision for
+                  your home.
+                </p>
+              </div>
+
+              {/* Div 2 */}
+              <div className="bg-teal-300 w-full md:h-52 bg-opacity-90 shadow rounded-lg p-4 md:p-12 flex flex-col justify-start">
+                <h3 className="text-xl md:text-4xl font-bold mb-2 text-gray-800">
+                  3D Modeling
+                </h3>
+                <p className="font-semibold md:text-sm opacity-50 text-gray-700 text-xs">
+                  Translate your vision and our design ideas into 3D design
+                  layout.
+                </p>
+              </div>
+
+              {/* Div 3 */}
+              <div className="bg-teal-300 w-full md:h-52 bg-opacity-90 shadow rounded-lg p-4 md:p-12 flex flex-col justify-start">
+                <h3 className="text-xl md:text-4xl font-bold mb-2 text-gray-800">
+                  Material Selection
+                </h3>
+                <p className="font-semibold md:text-sm opacity-50 text-gray-700 text-xs">
+                  Choose your material at your doorstep or online to finalise 3D
+                  modelling.
+                </p>
+              </div>
+
+              {/* Div 4 */}
+              <div className="bg-teal-300 w-full md:h-52 bg-opacity-90 shadow rounded-lg p-4 md:p-12 flex flex-col justify-start">
+                <h3 className="text-xl md:text-4xl font-bold mb-2 text-gray-800">
+                  Execution
+                </h3>
+                <p className="font-semibold md:text-sm opacity-50 text-gray-700 text-xs">
+                  Our Professional Execution Team then seamlessly bring the
+                  design to reality.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-
-      {/* Card 2 */}
-      <div className="bg-white bg-opacity-90 shadow rounded-lg p-4">
-        <h3 className="text-lg md:text-xl font-bold mb-2 text-gray-800">3D Modeling</h3>
-        <p className="text-gray-700 text-sm md:text-base">
-          Translate your vision and our design ideas into 3D design layout.
-        </p>
-      </div>
-
-      {/* Card 3 */}
-      <div className="bg-white bg-opacity-90 shadow rounded-lg p-4">
-        <h3 className="text-lg md:text-xl font-bold mb-2 text-gray-800">Material Selection</h3>
-        <p className="text-gray-700 text-sm md:text-base">
-          Choose your material at your doorstep or online to finalise 3D modelling.
-        </p>
-      </div>
-
-      {/* Card 4 */}
-      <div className="bg-white bg-opacity-90 shadow rounded-lg p-4">
-        <h3 className="text-lg md:text-xl font-bold mb-2 text-gray-800">Execution</h3>
-        <p className="text-gray-700 text-sm md:text-base">
-          Our Professional Execution Team then seamlessly bring the design to reality.
-        </p>
-      </div>
-    </div>
-  </div>
-</div>
-
-
 
       {/* screen 4 plans */}
       <div className={`${styles.screen} ${styles.screen4} snap-start`}>
