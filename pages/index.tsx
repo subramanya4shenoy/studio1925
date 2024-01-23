@@ -310,8 +310,93 @@ export default function Home() {
       </div>
 
       {/* screen 4 plans */}
-      <div className={`${styles.screen} ${styles.screen4} snap-start`}>
-        <div className="form-link">plans</div>
+      <div
+        className={`${styles.screen} snap-start p-4 bg-gradient-to-r from-green-100 via-blue-100 to-cyan-100`}
+      >
+        <h2 className="text-lg mt-16 text-left font-semibold mb-4">
+          Select Your Interior Design Plan
+        </h2>
+
+        <div className="text-xs pb-1 pl-3 font-semibold opacity-75">✓ Commercial Grade Ply or equivalent </div>
+        <div className="text-xs pb-1 pl-3 font-semibold opacity-75">✓ Merino Laminates or equivalent</div>
+        <div className="text-xs pb-1 mb-4 pl-3 font-semibold opacity-75">✓ Kitchen with water proof ply or equivalent</div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          {/* Plan 1 */}
+          <div className="bg-white text-gray-800 p-4 rounded-lg shadow-lg">
+            <div className="flex justify-between m-2">
+              <div className="text-center text-xs pr-2 pl-2 border-r-slate-300">
+                <div className="font-semibold text-2xl text-transparent bg-clip-text bg-gradient-to-r from-yellow-500 to-yellow-300">2</div>{" "}
+                <div className="text-xs p-2">BHK</div>
+              </div>
+              <div className="text-center text-xs pr-2 pl-2 border-r-slate-300">
+                <div className="font-semibold text-2xl text-transparent bg-clip-text bg-gradient-to-r from-yellow-500 to-yellow-300">1</div>{" "}
+                <div className="text-xs p-2">Modular Kitchen</div>
+              </div>
+              <div className="text-center text-xs pr-2 pl-2 border-r-slate-300">
+                <div className="font-semibold text-2xl text-transparent bg-clip-text bg-gradient-to-r from-yellow-500 to-yellow-300">2</div>{" "}
+                <div className="text-xs p-2">Wardrobes</div>
+              </div>
+              <div className="text-center text-xs pr-2 pl-2">
+                <div className="font-semibold text-2xl text-transparent bg-clip-text bg-gradient-to-r from-yellow-500 to-yellow-300">1</div>{" "}
+                <div className="text-xs p-2">TV Unit</div>
+              </div>
+            </div>
+            <div className="bg-gradient-to-r font-semibold from-green-100 p-3 rounded-lg text-center text-md to-cyan-100 via-blue-100">
+              Rs. 3.99L
+            </div>
+          </div>
+
+          {/* Plan 2 */}
+          <div className="bg-white text-gray-800 p-4 rounded-lg shadow-lg">
+            <div className="flex justify-between m-2">
+              <div className="text-center text-xs pr-2 pl-2 border-r-slate-300">
+                <div className="font-semibold text-2xl text-transparent bg-clip-text bg-gradient-to-r from-yellow-500 to-yellow-300">3</div>{" "}
+                <div className="text-xs p-2">BHK</div>
+              </div>
+              <div className="text-center text-xs pr-2 pl-2 border-r-slate-300">
+                <div className="font-semibold text-2xl text-transparent bg-clip-text bg-gradient-to-r from-yellow-500 to-yellow-300">1</div>{" "}
+                <div className="text-xs p-2">Modular Kitchen</div>
+              </div>
+              <div className="text-center text-xs pr-2 pl-2 border-r-slate-300">
+                <div className="font-semibold text-2xl text-transparent bg-clip-text bg-gradient-to-r from-yellow-500 to-yellow-300">3</div>{" "}
+                <div className="text-xs p-2">Wardrobes</div>
+              </div>
+              <div className="text-center text-xs pr-2 pl-2">
+                <div className="font-semibold text-2xl text-transparent bg-clip-text bg-gradient-to-r from-yellow-500 to-yellow-300">1</div>{" "}
+                <div className="text-xs p-2">TV Unit</div>
+              </div>
+            </div>
+            <div className="bg-gradient-to-r font-semibold from-green-100 p-3 rounded-lg text-center text-md to-cyan-100 via-blue-100">
+              Rs. 6.99L
+            </div>
+          </div>
+
+          {/* Plan 3 */}
+          <div className="bg-white text-gray-800 p-4 rounded-lg shadow-lg">
+            <div className="flex justify-between m-2">
+              <div className="text-center text-xs pr-2 pl-2 border-r-slate-300">
+                <div className="font-semibold text-2xl text-transparent bg-clip-text bg-gradient-to-r from-yellow-500 to-yellow-300">4</div>{" "}
+                <div className="text-xs p-2">BHK</div>
+              </div>
+              <div className="text-center text-xs pr-2 pl-2 border-r-slate-300">
+                <div className="font-semibold text-2xl text-transparent bg-clip-text bg-gradient-to-r from-yellow-500 to-yellow-300">1</div>{" "}
+                <div className="text-xs p-2">Modular Kitchen</div>
+              </div>
+              <div className="text-center text-xs pr-2 pl-2 border-r-slate-300">
+                <div className="font-semibold text-2xl text-transparent bg-clip-text bg-gradient-to-r from-yellow-500 to-yellow-300">4</div>{" "}
+                <div className="text-xs p-2">Wardrobes</div>
+              </div>
+              <div className="text-center text-xs pr-2 pl-2">
+                <div className="font-semibold text-2xl text-transparent bg-clip-text bg-gradient-to-r from-yellow-500 to-yellow-300">1</div>{" "}
+                <div className="text-xs p-2">TV Unit</div>
+              </div>
+            </div>
+            <div className="bg-gradient-to-r font-semibold from-green-100 p-3 rounded-lg text-center text-md to-cyan-100 via-blue-100">
+              Rs. 11.99L
+            </div>
+          </div>
+        </div>
       </div>
 
       {/* screen 4 contact us */}
