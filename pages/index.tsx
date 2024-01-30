@@ -166,7 +166,7 @@ export default function Home() {
         </div>
 
         {/* Animation on the right for desktop, bottom for mobile */}
-        <div className="w-full md:w-auto md:flex-1 overflow-hidden h-58 md:h-auto mb-12 md:mb-0">
+        <div className="w-full md:w-auto md:flex-1 overflow-hidden h-58 md:h-auto pb-12 md:pb-0">
           <video
             loop
             autoPlay
@@ -472,18 +472,20 @@ export default function Home() {
       </div>
 
       {/* screen 5 contact us */}
-      <div className={`${styles.screen} ${styles.screen4} snap-start relative`}>
+      <div className={`${styles.screen} bg-gradient-to-r from-green-100 via-blue-100 to-cyan-100 md:relative snap-start relative md:flex`}>
+      <div className="md:h-full md:w-2/4 w-full">
       <video
           autoPlay
           loop
           muted
           playsInline
-          className="absolute w-full md:h-full top-0 object-cover"
+          className="absolute h-full md:w-2/4 object-cover"
         >
           <source src="/videos/kitchen_build.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
-        <div className="flex flex-col items-center justify-center h-screen w-auto ">
+      </div>
+        <div className="flex flex-col items-center justify-center md:w-2/4 h-screen w-full">
           <h2 className="mb-6 text-2xl text-center font-semibold text-gray-800 z-20 md:bg-white md:p-4 md:bg-opacity-80 md:rounded-lg">
             Ready to transform your space?
           </h2>
@@ -492,7 +494,7 @@ export default function Home() {
             Get Quotes
           </PopupButton>
 
-          <div className="md:bg-opacity-80 md:bg-white text-xs md:p-10 md:rounded-lg z-20 p-10 bg-white bg-opacity-60 absolute md:relative bottom-16 md:mt-10">
+          <div className="md:bg-opacity-80 md:bg-white text-xs md:p-10 md:rounded-lg z-20 p-10 bg-white bg-opacity-60 md:relative md:mt-10">
             <p>Contact us:</p>
             <address className="not-italic mb-2 font-semibold">
               Kurudusonnehalli village, <br></br>
