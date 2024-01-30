@@ -166,7 +166,7 @@ export default function Home() {
         </div>
 
         {/* Animation on the right for desktop, bottom for mobile */}
-        <div className="w-full md:w-auto md:flex-1 overflow-hidden h-58 md:h-auto">
+        <div className="w-full md:w-auto md:flex-1 overflow-hidden h-58 md:h-auto mb-12 md:mb-0">
           <video
             loop
             autoPlay
@@ -335,9 +335,9 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 justify-between md:flex md:justify-center">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-2 justify-between md:flex md:justify-center">
             {/* Plan 1 */}
-            <div className="bg-white text-gray-800 p-5 rounded-lg shadow-lg md:m-10 md:pt-10 md:relative md:pb-24">
+            <div className="bg-white text-gray-800 p-2 md:p-5 rounded-lg shadow-lg md:m-10 md:pt-10 md:relative md:pb-24">
               <div className="hidden md:block">
                 <div className="text-sm pb-4 ">
                   ✓ Commercial Grade Ply or equivalent{" "}
@@ -381,7 +381,7 @@ export default function Home() {
             </div>
 
             {/* Plan 2 */}
-            <div className="bg-white text-gray-800 p-5 rounded-lg shadow-lg md:m-10 md:pt-10 md:relative md:pb-24">
+            <div className="bg-white text-gray-800 p-2 md:p-5 rounded-lg shadow-lg md:m-10 md:pt-10 md:relative md:pb-24">
               <div className="hidden md:block">
                 <div className="text-sm pb-4 ">
                   ✓ Commercial Grade Ply or equivalent{" "}
@@ -425,7 +425,7 @@ export default function Home() {
             </div>
 
             {/* Plan 3 */}
-            <div className="bg-white text-gray-800 p-5 rounded-lg shadow-lg md:m-10 md:pt-10 md:relative md:pb-24">
+            <div className="bg-white text-gray-800 p-2 md:p-5 rounded-lg shadow-lg md:m-10 md:pt-10 md:relative md:pb-24">
               <div className="hidden md:block">
                 <div className="text-sm pb-4 ">
                   ✓ Commercial Grade Ply or equivalent{" "}
@@ -471,14 +471,14 @@ export default function Home() {
         </div>
       </div>
 
-      {/* screen 4 contact us */}
+      {/* screen 5 contact us */}
       <div className={`${styles.screen} ${styles.screen4} snap-start relative`}>
       <video
           autoPlay
           loop
           muted
           playsInline
-          className="absolute w-full h-full object-cover"
+          className="absolute w-full md:h-full top-0 object-cover"
         >
           <source src="/videos/kitchen_build.mp4" type="video/mp4" />
           Your browser does not support the video tag.
@@ -492,13 +492,14 @@ export default function Home() {
             Get Quotes
           </PopupButton>
 
-          <div className="md:bg-opacity-80 md:bg-white font-semibold md:p-10 md:rounded-lg z-20 p-10 bg-white bg-opacity-60">
-            <p className="font-semibold">Contact with us</p>
-            <address className="not-italic mb-2">
-              Kurudusonnehalli village, Opp Yellamma temple,<br></br>
-              Virgonagar post, Bangalore East Taluk, Bangalore 560049
+          <div className="md:bg-opacity-80 md:bg-white text-xs md:p-10 md:rounded-lg z-20 p-10 bg-white bg-opacity-60 absolute md:relative bottom-16 md:mt-10">
+            <p>Contact us:</p>
+            <address className="not-italic mb-2 font-semibold">
+              Kurudusonnehalli village, <br></br>
+              Opp Yellamma temple,<br></br>
+              Virgonagar post, Bangalore East Taluk, <br></br> 560049
             </address>
-            <p className="mb-1">+91 9901020629</p>
+            <p className="mb-1 font-semibold">+91 9901020629</p>
             <a
               href="mailto:support@studio1925.in"
               className="text-blue-600 hover:underline"
