@@ -4,6 +4,7 @@ import styles from "./Home.module.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
+import { PopupButton } from '@typeform/embed-react'
 
 export default function Home() {
   useEffect(() => {
@@ -158,9 +159,9 @@ export default function Home() {
               your unique style. Ready to transform your space? Let's connect
               and start the journey.
             </p>
-            <button className="fixed top-0 right-0 m-4 md:relative md:m-auto bg-transparent hover:bg-black text-black font-semibold hover:text-white py-2 px-4 border border-black hover:border-transparent rounded">
+            <PopupButton size={60} id="Y4w0YLDU" className="fixed top-0 right-0 m-4 md:relative md:m-auto bg-transparent hover:bg-black text-black font-semibold hover:text-white py-2 px-4 border border-black hover:border-transparent rounded">
               Contact Us
-            </button>
+            </PopupButton>
           </div>
         </div>
 
@@ -211,9 +212,6 @@ export default function Home() {
 
         {/* Gallery Carousel taking bottom 60% */}
         <div className="w-full bg-black bg-opacity-25 absolute bottom-0 mb-20 px-4 pb-4 md:px-8 md:pb-8 overflow-hidden z-10">
-          <h1 className="text-xl md:text-3xl font-bold mb-4 text-white">
-            Gallery:{" "}
-          </h1>
           <Slider {...carouselSettings}>
             {imageNumbers.map((num) => (
               <div key={num} className="p-2">
@@ -377,9 +375,9 @@ export default function Home() {
                   <div className="text-xs p-2">TV Unit</div>
                 </div>
               </div>
-              <div className="bg-gradient-to-r font-semibold from-green-100 p-3 rounded-lg text-center text-md to-cyan-100 via-blue-100 md:absolute md:bottom-10 md:right-10 md:w-auto md:pl-10 md:pr-10">
+              <PopupButton size={60} id="Y4w0YLDU" className="bg-gradient-to-r font-semibold from-green-100 w-full p-3 rounded-lg text-center text-md to-cyan-100 via-blue-100 md:absolute md:bottom-10 md:right-10 md:w-auto md:pl-10 md:pr-10">
                 Rs. 3.99L
-              </div>
+              </PopupButton>
             </div>
 
             {/* Plan 2 */}
@@ -421,9 +419,9 @@ export default function Home() {
                   <div className="text-xs p-2">TV Unit</div>
                 </div>
               </div>
-              <div className="bg-gradient-to-r font-semibold from-green-100 p-3 rounded-lg text-center text-md to-cyan-100 via-blue-100 md:absolute md:bottom-10 md:right-10 md:w-auto md:pl-10 md:pr-10">
+              <PopupButton size={60} id="Y4w0YLDU" className="bg-gradient-to-r font-semibold from-green-100 w-full p-3 rounded-lg text-center text-md to-cyan-100 via-blue-100 md:absolute md:bottom-10 md:right-10 md:w-auto md:pl-10 md:pr-10">
                 Rs. 6.99L
-              </div>
+              </PopupButton>
             </div>
 
             {/* Plan 3 */}
@@ -465,9 +463,9 @@ export default function Home() {
                   <div className="text-xs p-2">TV Unit</div>
                 </div>
               </div>
-              <div className="bg-gradient-to-r font-semibold from-green-100 p-3 rounded-lg text-center text-md to-cyan-100 via-blue-100 md:absolute md:bottom-10 md:right-10 md:w-auto md:pl-10 md:pr-10">
+              <PopupButton size={60} id="Y4w0YLDU" className="bg-gradient-to-r font-semibold from-green-100 w-full p-3 rounded-lg text-center text-md to-cyan-100 via-blue-100 md:absolute md:bottom-10 md:right-10 md:w-auto md:pl-10 md:pr-10">
                 Rs. 11.99L
-              </div>
+              </PopupButton>
             </div>
           </div>
         </div>
@@ -490,9 +488,9 @@ export default function Home() {
             Ready to transform your space?
           </h2>
 
-          <button className="mb-8 bg-blue-600 text-white font-bold py-2 px-4 rounded-full hover:bg-blue-700 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out ">
+          <PopupButton size={60} id="Y4w0YLDU" className="mb-8 bg-blue-600 text-white font-bold py-2 px-4 rounded-full hover:bg-blue-700 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out ">
             Get Quotes
-          </button>
+          </PopupButton>
 
           <div className="md:bg-opacity-80 md:bg-white font-semibold md:p-10 md:rounded-lg z-20 p-10 bg-white bg-opacity-60">
             <p className="font-semibold">Contact with us</p>
