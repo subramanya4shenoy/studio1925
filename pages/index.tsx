@@ -352,7 +352,7 @@ export default function Home() {
               <div className="flex md:flex-col justify-between m-2">
                 <div className="text-center md:flex text-xs pr-2 pl-2 border-r-slate-300">
                   <div className="font-semibold text-2xl text-transparent bg-clip-text bg-gradient-to-r from-yellow-500 to-yellow-300">
-                    2
+                    1
                   </div>{" "}
                   <div className="text-xs p-2">BHK</div>
                 </div>
@@ -364,7 +364,7 @@ export default function Home() {
                 </div>
                 <div className="text-center md:flex text-xs pr-2 pl-2 border-r-slate-300">
                   <div className="font-semibold text-2xl text-transparent bg-clip-text bg-gradient-to-r from-yellow-500 to-yellow-300">
-                    2
+                    1
                   </div>{" "}
                   <div className="text-xs p-2">Wardrobes</div>
                 </div>
@@ -396,7 +396,7 @@ export default function Home() {
               <div className="flex md:flex-col justify-between m-2">
                 <div className="text-center md:flex text-xs pr-2 pl-2 border-r-slate-300">
                   <div className="font-semibold text-2xl text-transparent bg-clip-text bg-gradient-to-r from-yellow-500 to-yellow-300">
-                    3
+                    2
                   </div>{" "}
                   <div className="text-xs p-2">BHK</div>
                 </div>
@@ -408,7 +408,7 @@ export default function Home() {
                 </div>
                 <div className="text-center md:flex text-xs pr-2 pl-2 border-r-slate-300">
                   <div className="font-semibold text-2xl text-transparent bg-clip-text bg-gradient-to-r from-yellow-500 to-yellow-300">
-                    3
+                    2
                   </div>{" "}
                   <div className="text-xs p-2">Wardrobes</div>
                 </div>
@@ -440,7 +440,7 @@ export default function Home() {
               <div className="flex md:flex-col justify-between m-2">
                 <div className="text-center md:flex text-xs pr-2 pl-2 border-r-slate-300">
                   <div className="font-semibold text-2xl text-transparent bg-clip-text bg-gradient-to-r from-yellow-500 to-yellow-300">
-                    4
+                    3
                   </div>{" "}
                   <div className="text-xs p-2">BHK</div>
                 </div>
@@ -452,7 +452,7 @@ export default function Home() {
                 </div>
                 <div className="text-center md:flex text-xs pr-2 pl-2 border-r-slate-300">
                   <div className="font-semibold text-2xl text-transparent bg-clip-text bg-gradient-to-r from-yellow-500 to-yellow-300">
-                    4
+                    3
                   </div>{" "}
                   <div className="text-xs p-2">Wardrobes</div>
                 </div>
