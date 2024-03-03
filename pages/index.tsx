@@ -8,46 +8,46 @@ import { PopupButton } from '@typeform/embed-react'
 
 export default function Home() {
   useEffect(() => {
-    const container = document.querySelector(`.${styles.scrollContainer}`);
+    // const container = document.querySelector(`.${styles.scrollContainer}`);
 
-    if (container) {
-      let lastScrollTop = 0;
+    // if (container) {
+    //   let lastScrollTop = 0;
 
-      const snapScroll = (event: any) => {
-        const currentScrollTop = container.scrollTop;
-        const screenHeight = window.innerHeight;
-        const delta = currentScrollTop - lastScrollTop;
-        const totalScreens = container.children.length;
-        let targetScreenIndex;
+    //   const snapScroll = (event: any) => {
+    //     const currentScrollTop = container.scrollTop;
+    //     const screenHeight = window.innerHeight;
+    //     const delta = currentScrollTop - lastScrollTop;
+    //     const totalScreens = container.children.length;
+    //     let targetScreenIndex;
 
-        if (delta > 0) {
-          // Scrolling down
-          targetScreenIndex = Math.floor(
-            (currentScrollTop + screenHeight) / screenHeight
-          );
-        } else {
-          // Scrolling up
-          targetScreenIndex = Math.floor(currentScrollTop / screenHeight);
-        }
+    //     if (delta > 0) {
+    //       // Scrolling down
+    //       targetScreenIndex = Math.floor(
+    //         (currentScrollTop + screenHeight) / screenHeight
+    //       );
+    //     } else {
+    //       // Scrolling up
+    //       targetScreenIndex = Math.floor(currentScrollTop / screenHeight);
+    //     }
 
-        // Clamp targetScreenIndex between 0 and totalScreens - 1
-        targetScreenIndex = Math.max(
-          0,
-          Math.min(targetScreenIndex, totalScreens - 1)
-        );
+    //     // Clamp targetScreenIndex between 0 and totalScreens - 1
+    //     targetScreenIndex = Math.max(
+    //       0,
+    //       Math.min(targetScreenIndex, totalScreens - 1)
+    //     );
 
-        container.scrollTo({
-          top: screenHeight * targetScreenIndex,
-          behavior: "smooth",
-        });
+    //     container.scrollTo({
+    //       top: screenHeight * targetScreenIndex,
+    //       behavior: "smooth",
+    //     });
 
-        lastScrollTop = currentScrollTop <= 0 ? 0 : currentScrollTop; // For Mobile or negative scrolling
-      };
+    //     lastScrollTop = currentScrollTop <= 0 ? 0 : currentScrollTop; // For Mobile or negative scrolling
+    //   };
 
-      container.addEventListener("wheel", snapScroll);
+    //   container.addEventListener("wheel", snapScroll);
 
-      return () => container.removeEventListener("wheel", snapScroll);
-    }
+    //   return () => container.removeEventListener("wheel", snapScroll);
+    // }
   }, []);
 
   const carouselSettings = {
@@ -104,8 +104,8 @@ export default function Home() {
       className={`${styles.scrollContainer} 
                       h-screen 
                       overflow-y-scroll 
-                      snap-y 
-                      snap-mandatory`}
+                      
+                      `}
     >
       {/* screen 1 */}
       <div
@@ -116,7 +116,7 @@ export default function Home() {
                        justify-end 
                        relative
                        md:justify-center
-                       snap-start`}
+                       `}
       >
         <div className="absolute top-0 left-0 w-full md:w-1/3 opacity-50 z-10">
           <img
@@ -186,7 +186,7 @@ export default function Home() {
       </div>
 
       {/* screen 2 */}
-      <div className={`${styles.screen} ${styles.screen2} snap-start relative`}>
+      <div className={`${styles.screen} ${styles.screen2}  relative`}>
         <video
           autoPlay
           loop
@@ -234,7 +234,7 @@ export default function Home() {
       {/* screen 3 */}
       <div
         className={`${styles.screen} 
-                       snap-start 
+                        
                        flex flex-col 
                        md:flex-row 
                        items-center 
@@ -309,7 +309,7 @@ export default function Home() {
 
       {/* screen 4 plans */}
       <div
-        className={`${styles.screen} snap-start p-4 bg-gradient-to-r from-green-100 via-blue-100 to-cyan-100 md:relative`}
+        className={`${styles.screen}  p-4 bg-gradient-to-r from-green-100 via-blue-100 to-cyan-100 md:relative`}
       >
         <div className="absolute top-0 left-0 w-full md:w-1/3 opacity-50 z-10 hidden md:block">
           <img
@@ -472,7 +472,7 @@ export default function Home() {
       </div>
 
       {/* screen 5 contact us */}
-      <div className={`${styles.screen} bg-gradient-to-r from-green-100 via-blue-100 to-cyan-100 md:relative snap-start relative md:flex`}>
+      <div className={`${styles.screen} bg-gradient-to-r from-green-100 via-blue-100 to-cyan-100 md:relative  relative md:flex`}>
       <div className="md:h-full md:w-2/4 w-full">
       <video
           autoPlay
