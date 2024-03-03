@@ -464,7 +464,7 @@ export default function Home() {
                 </div>
               </div>
               <PopupButton size={60} id="Y4w0YLDU" className="bg-gradient-to-r font-semibold from-green-100 w-full p-3 rounded-lg text-center text-md to-cyan-100 via-blue-100 md:absolute md:bottom-10 md:right-10 md:w-auto md:pl-10 md:pr-10">
-                Rs. 11.99L
+                Rs. 10.99L
               </PopupButton>
             </div>
           </div>
