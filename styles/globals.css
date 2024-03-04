@@ -21,3 +21,8 @@ body {
   padding: 0;
   font-family: 'Montserrat', sans-serif;
 }
+
+.heading_area{
+  background: #0000004d;
+  border-radius: 10px;
+}

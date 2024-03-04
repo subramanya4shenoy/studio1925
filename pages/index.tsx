@@ -96,7 +96,7 @@ export default function Home() {
     ],
   };
 
-  const imageNumbers = Array.from({ length: 44 }, (_, i) => i + 1);
+  const imageNumbers = Array.from({ length: 47 }, (_, i) => i + 1);
 
   // ============== Template ============================ //
   return (
@@ -192,14 +192,25 @@ export default function Home() {
           loop
           muted
           playsInline
-          className="absolute w-full h-full object-cover"
+          className="absolute w-full h-full object-cover hidden md:block"
         >
           <source src="/videos/screen2-cover.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
 
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute w-full h-full object-cover md:hidden block"
+        >
+          <source src="/videos/screen2-cover-mobile.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+
         {/* Text on top 25% */}
-        <div className="absolute top-1/4 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 p-4 md:p-8 text-white text-center w-full md:w-auto">
+        <div className="heading_area absolute top-1/4 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 p-4 md:p-8 text-white text-center w-full md:w-auto">
           <h2 className="text-xl md:text-3xl font-bold mb-4">
             Design that Speaks
           </h2>
