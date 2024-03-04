@@ -154,7 +154,7 @@ export default function Home() {
               className="text-base mb-6 mx-auto hidden md:block"
               style={{ maxWidth: "600px", color: "#503D33" }}
             >
-              Studio 1925 is where your vision of home comes to life. Our
+              Tuiva is where your vision of home comes to life. Our
               designs blend timeless elegance with modern comfort, tailored to
               your unique style. Ready to transform your space? Let's connect
               and start the journey.
@@ -217,7 +217,7 @@ export default function Home() {
           <p className="text-base md:text-lg">
             Each space we design has its own narrative, a story that's told
             through the harmonious language of design and architecture. Witness
-            the metamorphosis of your environment with Studio 1925.
+            the metamorphosis of your environment with Tuiva.
           </p>
         </div>
 
