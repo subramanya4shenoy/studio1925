@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@typeform/embed-react": "^3.11.0",
+    "dotenv": "^16.4.5",
     "lottie-react": "^2.4.0",
     "next": "14.0.4",
     "react": "^18",

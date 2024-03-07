@@ -1,54 +1,15 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./Home.module.css";
 // In your component or App's main entry file (e.g., index.js or App.js)
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
-import { PopupButton } from '@typeform/embed-react'
+import { PopupButton } from "@typeform/embed-react";
+import ContactForm from "./contact";
 
 export default function Home() {
-  useEffect(() => {
-    // const container = document.querySelector(`.${styles.scrollContainer}`);
-
-    // if (container) {
-    //   let lastScrollTop = 0;
-
-    //   const snapScroll = (event: any) => {
-    //     const currentScrollTop = container.scrollTop;
-    //     const screenHeight = window.innerHeight;
-    //     const delta = currentScrollTop - lastScrollTop;
-    //     const totalScreens = container.children.length;
-    //     let targetScreenIndex;
-
-    //     if (delta > 0) {
-    //       // Scrolling down
-    //       targetScreenIndex = Math.floor(
-    //         (currentScrollTop + screenHeight) / screenHeight
-    //       );
-    //     } else {
-    //       // Scrolling up
-    //       targetScreenIndex = Math.floor(currentScrollTop / screenHeight);
-    //     }
-
-    //     // Clamp targetScreenIndex between 0 and totalScreens - 1
-    //     targetScreenIndex = Math.max(
-    //       0,
-    //       Math.min(targetScreenIndex, totalScreens - 1)
-    //     );
-
-    //     container.scrollTo({
-    //       top: screenHeight * targetScreenIndex,
-    //       behavior: "smooth",
-    //     });
-
-    //     lastScrollTop = currentScrollTop <= 0 ? 0 : currentScrollTop; // For Mobile or negative scrolling
-    //   };
-
-    //   container.addEventListener("wheel", snapScroll);
-
-    //   return () => container.removeEventListener("wheel", snapScroll);
-    // }
-  }, []);
+  const [showContactForm, setshowContactForm] = useState(false);
+  const [type, setType] = useState("General");
 
   const carouselSettings = {
     dots: true,
@@ -98,25 +59,67 @@ export default function Home() {
 
   const imageNumbers = Array.from({ length: 47 }, (_, i) => i + 1);
 
+  const submitContact = async (val: any, type: string) => {
+    setshowContactForm(false);
+
+    // Use the environment variable for the API endpoint
+    const backendApi = process.env.NEXT_PUBLIC_BKND;
+    if (!backendApi) {
+      console.error("Backend API endpoint is not defined");
+      return;
+    }
+
+    try {
+      // Make a POST request to the backend API
+      const response = await fetch(backendApi, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          // Include other headers if needed
+        },
+        body: JSON.stringify({ contact: val, type: type }),
+      });
+
+      // Check if the request was successful
+      if (response.ok) {
+        const responseData = await response.json();
+        // Handle the response data as needed
+      } else {
+        // Handle HTTP errors
+        console.error("HTTP Error:", response.status, response.statusText);
+      }
+    } catch (error: any) {
+      // Handle network errors or other exceptions
+      console.error("Fetching error:", error.message);
+    }
+  };
+
   // ============== Template ============================ //
   return (
-    <main
+    <div
       className={`${styles.scrollContainer} 
                       h-screen 
                       overflow-y-scroll 
                       
                       `}
     >
+      {showContactForm && (
+        <ContactForm
+          closeContact={() => setshowContactForm(false)}
+          submitContact={(val: any) => submitContact(val, "General")}
+        />
+      )}
+
       {/* screen 1 */}
       <div
         className={`${styles.screen} 
-                       ${styles.screen1} 
-                       flex flex-col md:flex-row 
-                       items-center 
-                       justify-end 
-                       relative
-                       md:justify-center
-                       `}
+        ${styles.screen1} 
+        flex flex-col md:flex-row 
+        items-center 
+        justify-end 
+        relative
+        md:justify-center
+        `}
       >
         <div className="absolute top-0 left-0 w-full md:w-1/3 opacity-50 z-10">
           <img
@@ -154,14 +157,19 @@ export default function Home() {
               className="text-base mb-6 mx-auto hidden md:block"
               style={{ maxWidth: "600px", color: "#503D33" }}
             >
-              Tuiva is where your vision of home comes to life. Our
-              designs blend timeless elegance with modern comfort, tailored to
-              your unique style. Ready to transform your space? Let's connect
-              and start the journey.
+              Tuiva is where your vision of home comes to life. Our designs
+              blend timeless elegance with modern comfort, tailored to your
+              unique style. Ready to transform your space? Let's connect and
+              start the journey.
             </p>
-            <PopupButton size={60} id="Y4w0YLDU" className="fixed top-0 right-0 m-4 md:relative md:m-auto bg-transparent hover:bg-black text-black font-semibold hover:text-white py-2 px-4 border border-black hover:border-transparent rounded">
+            <button
+              onClick={() => {
+                setshowContactForm(true);
+              }}
+              className="fixed top-0 right-0 m-4 md:relative md:m-auto bg-transparent hover:bg-black text-black font-semibold hover:text-white py-2 px-4 border border-black hover:border-transparent rounded"
+            >
               Contact Us
-            </PopupButton>
+            </button>
           </div>
         </div>
 
@@ -386,9 +394,22 @@ export default function Home() {
                   <div className="text-xs p-2">TV Unit</div>
                 </div>
               </div>
-              <PopupButton size={60} id="Y4w0YLDU" className="bg-gradient-to-r font-semibold from-green-100 w-full p-3 rounded-lg text-center text-md to-cyan-100 via-blue-100 md:absolute md:bottom-10 md:right-10 md:w-auto md:pl-10 md:pr-10">
+              {/* <PopupButton
+                size={60}
+                id="Y4w0YLDU"
+                className="bg-gradient-to-r font-semibold from-green-100 w-full p-3 rounded-lg text-center text-md to-cyan-100 via-blue-100 md:absolute md:bottom-10 md:right-10 md:w-auto md:pl-10 md:pr-10"
+              >
                 Rs. 3.99L
-              </PopupButton>
+              </PopupButton> */}
+              <button
+                onClick={() => {
+                  setType("1 bhk");
+                  setshowContactForm(true);
+                }}
+                className="bg-gradient-to-r font-semibold from-green-100 w-full p-3 rounded-lg text-center text-md to-cyan-100 via-blue-100 md:absolute md:bottom-10 md:right-10 md:w-auto md:pl-10 md:pr-10"
+              >
+                Rs. 3.99L
+              </button>
             </div>
 
             {/* Plan 2 */}
@@ -430,9 +451,15 @@ export default function Home() {
                   <div className="text-xs p-2">TV Unit</div>
                 </div>
               </div>
-              <PopupButton size={60} id="Y4w0YLDU" className="bg-gradient-to-r font-semibold from-green-100 w-full p-3 rounded-lg text-center text-md to-cyan-100 via-blue-100 md:absolute md:bottom-10 md:right-10 md:w-auto md:pl-10 md:pr-10">
+              <button
+                onClick={() => {
+                  setType("2 bhk");
+                  setshowContactForm(true);
+                }}
+                className="bg-gradient-to-r font-semibold from-green-100 w-full p-3 rounded-lg text-center text-md to-cyan-100 via-blue-100 md:absolute md:bottom-10 md:right-10 md:w-auto md:pl-10 md:pr-10"
+              >
                 Rs. 6.99L
-              </PopupButton>
+              </button>
             </div>
 
             {/* Plan 3 */}
@@ -474,36 +501,50 @@ export default function Home() {
                   <div className="text-xs p-2">TV Unit</div>
                 </div>
               </div>
-              <PopupButton size={60} id="Y4w0YLDU" className="bg-gradient-to-r font-semibold from-green-100 w-full p-3 rounded-lg text-center text-md to-cyan-100 via-blue-100 md:absolute md:bottom-10 md:right-10 md:w-auto md:pl-10 md:pr-10">
+              <button
+                onClick={() => {
+                  setType("3 bhk");
+                  setshowContactForm(true);
+                }}
+                className="bg-gradient-to-r font-semibold from-green-100 w-full p-3 rounded-lg text-center text-md to-cyan-100 via-blue-100 md:absolute md:bottom-10 md:right-10 md:w-auto md:pl-10 md:pr-10"
+              >
                 Rs. 10.99L
-              </PopupButton>
+              </button>
             </div>
           </div>
         </div>
       </div>
 
       {/* screen 5 contact us */}
-      <div className={`${styles.screen} bg-gradient-to-r from-green-100 via-blue-100 to-cyan-100 md:relative  relative md:flex`}>
-      <div className="md:h-full md:w-2/4 w-full">
-      <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="absolute h-full md:w-2/4 object-cover"
-        >
-          <source src="/videos/kitchen_build.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-      </div>
+      <div
+        className={`${styles.screen} bg-gradient-to-r from-green-100 via-blue-100 to-cyan-100 md:relative  relative md:flex`}
+      >
+        <div className="md:h-full md:w-2/4 w-full">
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="absolute h-full md:w-2/4 object-cover"
+          >
+            <source src="/videos/kitchen_build.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
         <div className="flex flex-col items-center justify-center md:w-2/4 h-screen w-full">
           <h2 className="mb-6 text-2xl text-center font-semibold text-gray-800 z-20 md:bg-white md:p-4 md:bg-opacity-80 md:rounded-lg">
             Ready to transform your space?
           </h2>
 
-          <PopupButton size={60} id="Y4w0YLDU" className="mb-8 bg-blue-600 text-white font-bold py-2 px-4 rounded-full hover:bg-blue-700 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out ">
+          <button
+            onClick={() => {
+              setType("general");
+              setshowContactForm(true);
+            }}
+            className="mb-8 bg-blue-600 text-white font-bold py-2 px-4 rounded-full hover:bg-blue-700 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out "
+          >
             Get Quotes
-          </PopupButton>
+          </button>
 
           <div className="md:bg-opacity-80 md:bg-white text-xs md:p-10 md:rounded-lg z-20 p-10 bg-white bg-opacity-60 md:relative md:mt-10">
             <p>Contact us:</p>
@@ -522,6 +563,6 @@ export default function Home() {
           </div>
         </div>
       </div>
-    </main>
+    </div>
   );
 }
