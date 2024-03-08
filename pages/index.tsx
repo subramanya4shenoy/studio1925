@@ -59,7 +59,7 @@ export default function Home() {
 
   const imageNumbers = Array.from({ length: 47 }, (_, i) => i + 1);
 
-  const submitContact = async (val: any, type: string) => {
+  const submitContact = async (val: any) => {
     setshowContactForm(false);
 
     // Use the environment variable for the API endpoint
@@ -106,7 +106,7 @@ export default function Home() {
       {showContactForm && (
         <ContactForm
           closeContact={() => setshowContactForm(false)}
-          submitContact={(val: any) => submitContact(val, "General")}
+          submitContact={(val: any) => submitContact(val)}
         />
       )}
 
