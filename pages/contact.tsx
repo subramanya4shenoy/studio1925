@@ -1,8 +1,11 @@
 import React, { useState } from "react";
+import { useRouter } from 'next/router';
 
 function ContactForm({closeContact, submitContact}:any) {
 
     const [phoneNumber, setPhoneNumber] = useState('');
+    const router = useRouter();
+    const isContactPage = router.pathname === '/contact';
 
   // Function to simulate form submission
   const handleSubmit = () => {
@@ -40,7 +43,7 @@ function ContactForm({closeContact, submitContact}:any) {
           transform: "translate(-50%, -50%)",
         }}
       >
-        <div
+        {!isContactPage && <div
             className="cursor-pointer 
                        px-3 
                        py-1 
@@ -64,7 +67,7 @@ function ContactForm({closeContact, submitContact}:any) {
                        shadow-lg" 
             onClick={() => closeContact(false)}>
             X
-        </div>
+        </div>}
 
         <div className="md:mt-6 mt-20">
           <img

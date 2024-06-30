@@ -6,6 +6,7 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import { PopupButton } from "@typeform/embed-react";
 import ContactForm from "./contact";
+import router, { useRouter } from 'next/router';
 
 export default function Home() {
   const [showContactForm, setshowContactForm] = useState(false);
@@ -164,7 +165,7 @@ export default function Home() {
             </p>
             <button
               onClick={() => {
-                setshowContactForm(true);
+                router.push('/contact');
               }}
               className="fixed top-0 right-0 m-4 md:relative md:m-auto bg-transparent hover:bg-black text-black font-semibold hover:text-white py-2 px-4 border border-black hover:border-transparent rounded"
             >
@@ -539,7 +540,7 @@ export default function Home() {
           <button
             onClick={() => {
               setType("general");
-              setshowContactForm(true);
+              router.push('/contact');
             }}
             className="mb-8 bg-blue-600 text-white font-bold py-2 px-4 rounded-full hover:bg-blue-700 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out "
           >
