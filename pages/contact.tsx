@@ -8,8 +8,41 @@ function ContactForm({closeContact, submitContact}:any) {
     const isContactPage = router.pathname === '/contact';
 
   // Function to simulate form submission
-  const handleSubmit = () => {
-    submitContact(phoneNumber);
+  const handleSubmit = async () => {
+    if(isContactPage) {
+      const backendApi = process.env.NEXT_PUBLIC_BKND;
+    if (!backendApi) {
+      console.error("Backend API endpoint is not defined");
+      return;
+    }
+
+    try {
+      // Make a POST request to the backend API
+      const response = await fetch(backendApi, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          // Include other headers if needed
+        },
+        body: JSON.stringify({ contact: phoneNumber, type: 'general' }),
+      });
+
+      // Check if the request was successful
+      if (response.ok) {
+        const responseData = await response.json();
+        // Handle the response data as needed
+      } else {
+        // Handle HTTP errors
+        console.error("HTTP Error:", response.status, response.statusText);
+      }
+    } catch (error: any) {
+      // Handle network errors or other exceptions
+      console.error("Fetching error:", error.message);
+    }
+    }
+    else {
+      submitContact(phoneNumber);
+    }
   };
 
   const handleInputChange = (event:any) => {
