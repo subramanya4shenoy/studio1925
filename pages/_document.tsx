@@ -7,7 +7,7 @@ export default function Document() {
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
         <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16624953200"></script>
         <script>
-            window.dataLayer = window.dataLayer || [];
+            (window as any).dataLayer = (window as any).dataLayer || [];
             function gtag(){
               (window as any).dataLayer.push(arguments)
             }
@@ -17,7 +17,7 @@ export default function Document() {
         <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16624953200">
         </script>
         <script>
-          window.dataLayer = window.dataLayer || [];
+        (window as any).dataLayer = (window as any).dataLayer || [];
           function gtag(){
             (window as any).dataLayer.push(arguments)
           }
