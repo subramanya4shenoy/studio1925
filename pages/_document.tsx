@@ -9,7 +9,7 @@ export default function Document() {
         <script>
             window.dataLayer = window.dataLayer || [];
             function gtag(){
-              dataLayer.push(arguments)
+              window.dataLayer.push(arguments)
             }
             gtag('js', new Date());
             gtag('config', 'AW-16624953200');
